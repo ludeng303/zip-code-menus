@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+header > h1{
+  font-size: 4em;
+}
+nav{
+  padding: 1em;
+  margin: auto;
+}
+form{
+  display: f;
+}
+input{
+  font-size: 2em;
+  padding-left: 4px;
+  width: 7em
+}
+
+main {
+  display:flex;
+  flex-direction: column;
+}
+section {
+  border: 1px solid gray;
+  border-radius:2%;
+  margin:6px;
+} 
+img, h1, h2, section{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+.menu {
+    display: none;
+}
+.navbar{
+  display:table;
+  background-color: gray;
+  color:white;
+  font-style:bold;
+  text-align: right;
+}
+#js-section-zip{
+  display: flow-root;
+}
+#js-section-zip > button{
+  margin: 3px;
+  padding: 9px;
+  border: 1px black solid;
+}
+#js-h3-messege{
+  margin-left: 2em;
+}
+/*
+For any screen larger than 400px
+*/
+@media screen and (min-width: 400px) {
+}
+
+/*
+For any screen larger than 700px
+*/
+@media screen and (min-width: 700px) {
+  main {
+  display:block;
+  flex-direction: row;
+  }
+
+  header {
+    display: flex;
+    flex-direction: row;
+    vertical-align: middle;
+  }
+  img {
+    vertical-align: middle;
+  }
+  section {
+    margin-left:5px;
+    margin-right:5px;
+  }
+
+.social{
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction:row;
+    width:100%;
+  }
+
+}
