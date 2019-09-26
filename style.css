@@ -44,8 +44,12 @@ section {
   border: 1px solid gray;
   border-radius:2%;
   margin:6px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 } 
-img, h1, h2, section{
+img, h1, h2{
   display: block;
   margin-left: auto;
   margin-right: auto;
