@@ -7,7 +7,7 @@ function watchForms() {
         event.preventDefault();
         const userInput = $('#js-input-zip').val();
         searchZipCode(userInput);
-        searchMenu(userInput);
+        //searchMenu(userInput);
     });
 }
 
