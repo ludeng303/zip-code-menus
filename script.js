@@ -1,5 +1,5 @@
 'use strict';
-//****************** click listeners and HTML writters */
+//****************** data storage & click listeners */
 
 //****************** click listeners ******************************** */
 function watchForms() {
@@ -7,6 +7,7 @@ function watchForms() {
         event.preventDefault();
         const userInput = $('#js-input-zip').val();
         searchZipCode(userInput);
+        searchMenu(userInput);
     });
 }
 

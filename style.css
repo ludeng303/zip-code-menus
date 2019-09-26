@@ -18,9 +18,20 @@ form{
 }
 input{
   font-size: 2em;
-  padding-left: 4px;
   width: 7em
 }
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+
+  text-align: left;
+  padding: 8px;
+}
+
 
 main {
   display:flex;
@@ -45,18 +56,26 @@ img, h1, h2, section{
   background-color: gray;
   color:white;
   font-style:bold;
-  text-align: right;
+  text-align: center;
 }
-#js-section-zip{
-  display: flow-root;
+#js-sec-zipInfo{
+  display: flex;
+  flex-direction: row;
+  margin: auto;
 }
-#js-section-zip > button{
+#js-sec-zipInfo > div{
   margin: 3px;
   padding: 9px;
   border: 1px black solid;
+  display: inline;
 }
 #js-h3-messege{
   margin-left: 2em;
+}
+.zip-results{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 /*
 For any screen larger than 400px
