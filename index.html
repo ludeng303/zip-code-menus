@@ -1,100 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<title>US Zip Code Menus</title>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta http-equiv="X-UA-Compatible">
-	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
-	 crossorigin="anonymous">
-	<link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-		<h1>US Menu Box</h1>
-	</header>
-	<nav class="navbar">
-		<form id='js-form-zip'>
-				<input id="js-input-zip" name="zip" type="text" pattern="[0-9]*" placeholder="US Zip Code">
-				<input id="js-input-submit" type="submit" value="Find">
-		</form>
-	</nav>
-	<h3 id='js-h3-messege'>Zip Code found / not found</h3>
+	<head>
+		<title>US Zip Code Menus</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta http-equiv="X-UA-Compatible">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body class="checkered">
+  		<header>
+			<h1>US Menu Box</h1>
+		</header>
+		<main>
+			<nav class="navbar">
+				<div class='result-container'>
+					<div class='cards'>
+						<form id='js-form-zip'>
+							<input id="js-input-zip" name="zip" type="text" pattern="[0-9]*" placeholder="US Zip Code" required/>
+							<input id="js-input-submit" type="submit" value="Find"/>
+						</form>
+						<h3 id='js-h3-messege'>Example: 10036</h3>
+					</div>
+					<div class='cards' id ='zip-info-1'>
+						<p>Zip Code: <span id='js-ZipCode'>80122</span></p>
+						<p>Zip Code Population:  <span id='js-ZipCodePopulation'>29.7k</span></p>
+						<p>Zip Code Area: <span id='js-AreaLand'>7</span> sq. miles</p>
+						<p>Region: <span id='js-region'>West</span></p>
+						<p>Division: <span id='js-Division'>Mountain</span></p>
+						<p>State: <span id='js-State'>Co</span></p>
+						<p>County: <span id='js-CountyName'>Arapahoe</span></p>
+						<p>County Area: <span id='js-CountiesArea'>803</span> sq. miles</p>
+						<p>Elevation: <span id='js-Elevation'>5358</span> ft.</p>
+					</div>
+					<div class='cards' id ='zip-info-2'>
+						<p>Male Population: <span id='js-MalePop'>14.2k</span></p>
+						<p>Female Pop.: <span id='js-FemalePop'>15.5k</span></p>
+						<p>White Pop.: <span id='js-WhitePop'>28.3k</span></p>
+						<p>Black Pop.: <span id='js-BlackPop'>0.4k</span></p>
+						<p>Hispanic Pop.: <span id='js-HispanicPop'>1.8k</span></p>
+						<p>Asian Pop.: <span id='js-AsianPop'>0.8k</span></p>
+						<p>Hawaiian Pop.: <span id='js-HawaiianPop'>67</span></p>
+						<p>Indian Pop.: <span id='js-IndianPop'>0.3k</span></p>
+						<p>Other Pop.: <span id='js-OtherPop'>0.5k</span></p>
+					</div>
+					<div class='cards' id ='zip-info-3'>
+						<p>Median Age: <span id='js-MedianAge'>45.9</span></p>
+						<p>Median Male Age: <span id='js-MedianAgeMale'>42.97</span></p>
+						<p>Median Female Age: <span id='js-MedianAgeFemale'>44.3</span></p>
+						<p>Households: <span id='js-HouseholdsPerZipcode'>11.5k</span></p>
+						<p>Avg. Family Size: <span id='js-AverageFamilySize'>2.79</span></p>
+						<p>Person per Household: <span id='js-PersonsPerHousehold'>2.5</span></p>
+						<p>Avg. Home Value: <span id='js-AverageHouseValue'>355.2k</span></p>
+						<p>Income per Household: <span id='js-IncomePerHousehold'>92k</span></p>
+						<p>Business Establishments: <span id='js-Bus03Establishments'>1070</span></p>		
+					</div>
+				</div>
+			</nav>
+			<section>
+				<div class='page-selector' id='js-page-selector'>
+					<h2>Pages: </h2>
+				</div>
+			</section>
+			<section>
+				<div class="result-container">
+					<div class ='menu-cards'>
+						<h3>Restaurant Name</h3>
+						<p>* * * * *</p>
+						<p>7470 S. University Blvd Centennial, CO 80122</p>
+						<p>323-445-9765</p>											
+						<p>Menu File ID: 322503</p>
+					</div>
+					<div class ='menu-cards'>
+						<h3>Restaurant Name</h3>
+						<p>* * * * *</p>
+						<p>7470 S. University Blvd Centennial, CO 80122</p>
+						<p>323-445-9765</p>											
+						<p>Menu File ID: 322503</p>
+					</div>
+					<div class ='menu-cards'>
+							<h3>Restaurant Name</h3>
+							<p>* * * * *</p>
+							<p>7470 S. University Blvd Centennial, CO 80122</p>
+							<p>323-445-9765</p>											
+							<p>Menu File ID: 322503</p>
+						</div>
+						<div class ='menu-cards'>
+							<h3>Restaurant Name</h3>
+							<p>* * * * *</p>
+							<p>7470 S. University Blvd Centennial, CO 80122</p>
+							<p>323-445-9765</p>											
+							<p>Menu File ID: 322503</p>
+						</div>
+					<div class ='menu-cards'>
+							<h3>Restaurant Name</h3>
+							<p>* * * * *</p>
+							<p>7470 S. University Blvd Centennial, CO 80122</p>
+							<p>323-445-9765</p>											
+							<p>Menu File ID: 322503</p>
+						</div>
+						<div class ='menu-cards'>
+							<h3>Restaurant Name</h3>
+							<p>* * * * *</p>
+							<p>7470 S. University Blvd Centennial, CO 80122</p>
+							<p>323-445-9765</p>											
+							<p>Menu File ID: 322503</p>
+						</div>					
+				</div>
+			</section>
+		</main>
 
-	<table class='zip-results'>
-		<tr>
-		  <th></th>
-		  <th></th>
-		  <th></th>
-		</tr>
-		
-		<tr>
-		  <td>Zip Code: <span id='js-span-ZipCode'>80122</span></td>
-		  <td>Male Population: <span id='js-span-MalePop'>14.2k</span></td>
-		  <td>Median Age: <span id='js-span-MedianAge'>45.9</span<</td>
-		</tr>
-		<tr>
-		  <td>Zip Code Area: <span id='js-span-AreaLand'>7</span> sq. miles</td>
-		  <td>Female Pop.: <span id='js-span-FemalePop'>15.5k</span></td>
-		  <td>Median Male Age: <span id='js-span-MedianAgeMale'>42.97</span></td>
-		</tr>
-		<tr>
-			<td>Zip Code Population:  <span id='js-span-ZipCodePopulation'>29.7k</span></td>
-			<td>White Pop.: <span id='js-span-WhitePop'>28.3k</span></td>
-			<td>Median Female Age: <span id='js-span-MedianAgeFemale'>44.3</span></td>
-		</tr>
-		<tr>
-			<td>Region: <span id='js-span-region'>West</span></td>
-			<td>Black Pop.: <span id='js-span-BlackPop'>0.4k</span></td>
-			<td>Households: <span id='js-span-HouseholdsPerZipcode'>11.5k</span></td>
-		</tr>
-		<tr>
-			<td>Division: <span id='js-span-Division'>Mountain</span></td>
-			<td>Hispanic Pop.: <span id='js-span-HispanicPop'>1.8k</span></td>
-			<td>Avg. Family Size: <span id='js-span-AverageFamilySize'>2.79</span></td>
-		</tr>
-		<tr>
-			<td>State: <span id='js-span-State'>Co</span></td>
-			<td>Asian Pop.: <span id='js-span-AsianPop'>0.8k</span></td>
-			<td>Person per Household: <span id='js-span-PersonsPerHousehold'>2.5</span></td>
-		</tr>
-		<tr>
-			<td>County: <span id='js-span-CountyName'>Arapahoe</span></td>
-			<td>Hawaiian Pop.: <span id='js-span-HawaiianPop'>67</span></td>
-			<td>Avg. Home Value: <span id='js-span-AverageHouseValue'>355.2k</span></td>
-		</tr>
-		<tr>
-			<td>County Area: <span id='js-span-CountiesArea'>803</span> sq. miles</td>
-			<td>Indian Pop.: <span id='js-span-IndianPop'>0.3k</span></td>
-			<td>Income per Household: <span id='js-span-IncomePerHousehold'>92k</span></td>
-		</tr>
-		<tr>
-			<td>Elevation: <span id='js-span-Elevation'>5358</span> ft.</td>
-			<td>Other Pop.: <span id='js-span-OtherPop'>0.5k</span></td>
-			<td>Business Establishments: <span id='js-span-Bus03Establishments'>1070</span></td>
-		</tr>
-	  </table>
 
-
-	<main>
-		<section class="box">
-			<div>
-				<h3>Restaurant Name</h3>
-				<p>Italian</p>
-				<p>7470 S. University Blvd Centennial, CO 80122</p>
-				<p>323-445-9765</p>
-				<p>geo: [lon: -104.957584, lat: 39.580651]</p>
-				<p>Menu File ID: 322503</p>
-			</div>
-		</section>
-	</main>
-	<footer>
-
-	</footer>
-
-	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
-	<script src="fetch.js"></script>
-    <script src="script.js"></script>
-</body>
+		<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+		<script src="fetch.js"></script>
+   		<script src="script.js"></script>
+	</body>
 </html>
