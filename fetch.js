@@ -69,11 +69,9 @@ function displayMenuCards(response){
           <p>File ID: ${id}</p>
          </div>
       `;
-      console.log("card finished: "+ cardHtml);
       htmlStr += cardHtml;
 
   }// end of for loop
-  console.log("all cards finished " + htmlStr);
   document.getElementById('card-holder').innerHTML = htmlStr;
 }
 
@@ -94,7 +92,8 @@ function searchMenu_ID(id){
   }
   
   $.ajax(settings).done(function (response) {
-    console.log(response);
+    console.log(response.result.menus[2].menu_section[2].section_name);
+
 
   });
 }
