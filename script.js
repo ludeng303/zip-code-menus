@@ -19,6 +19,9 @@ $(function() {
 function pageItemOnclick(zipCode, i){
     searchMenu(zipCode, i);
 }
+function menuCardOnclick(id){
+    searchMenu_ID(id);
+}
 
 //****************** screen switches ********************************** */
 function showResultCards(switchOn){

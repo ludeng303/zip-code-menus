@@ -24,7 +24,6 @@ function searchMenu(zipCode, page){
     displayMenuCards(response);
   });
 }
-
 function displayPageNav(response){
   let numOfPages = response.result.pages;
   let numOfMenus = response.result.totalResults;
@@ -44,8 +43,6 @@ function displayPageNav(response){
   document.getElementById('js-page-selector').innerHTML = htmlStr;
 }
 
-
-
 function displayMenuCards(response){
   showMenuBox(true);
   let numOfMenus = response.result.numResults;
@@ -63,13 +60,13 @@ function displayMenuCards(response){
     let phone = response.result.data[i].restaurant_phone;
     let id = response.result.data[i].restaurant_id;
     let cardHtml = `
-        <div class ='menu-cards'>
+        <div class ='menu-cards' onclick="menuCardOnclick(${id})">
           <h3>${name}</h3>
           <p>${cuisinesStr}*</p>
           <p>${hours}</p>
           <p>${address}</p>	
           <p>${phone}</p>										
-          <p>${id}</p>
+          <p>File ID: ${id}</p>
          </div>
       `;
       console.log("card finished: "+ cardHtml);
@@ -79,6 +76,29 @@ function displayMenuCards(response){
   console.log("all cards finished " + htmlStr);
   document.getElementById('card-holder').innerHTML = htmlStr;
 }
+
+// End-point GET restaurant by id, API from https://rapidapi.com
+
+function searchMenu_ID(id){
+  let url1_pt_1 = 'https://us-restaurant-menus.p.rapidapi.com/restaurant/';
+  const url = url1_pt_1 + id;
+  let settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": url,
+    "method": "GET",
+    "headers": {
+      "x-rapidapi-host": "us-restaurant-menus.p.rapidapi.com",
+      "x-rapidapi-key": "2f50b9da63msh084ee8e8713c928p158020jsn62e5f9475ade"
+    }
+  }
+  
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+
+  });
+}
+
 
 // API key + URL from https://www.zip-codes.com/
 const zipApiKey = 'RFHNTCY2KK2J45YBFI6U'; 
