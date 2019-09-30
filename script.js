@@ -1,6 +1,6 @@
 'use strict';
-//****************** screen switches & click listeners */
 
+//****************** click listeners & screen switches  **************** */
 //****************** click listeners ******************************** */
 function watchForms() {
     $('#js-form-zip').submit(event => {
@@ -10,13 +10,17 @@ function watchForms() {
         searchMenu(userInput,1);
     });
 }
-
 $(function() {
     showResultCards(false);
+    showMenuBox(false);
     watchForms();
 
 });
+function pageItemOnclick(zipCode, i){
+    searchMenu(zipCode, i);
+}
 
+//****************** screen switches ********************************** */
 function showResultCards(switchOn){
     if(switchOn){
         $('#zip-info-1').show();
@@ -27,7 +31,11 @@ function showResultCards(switchOn){
         $('#zip-info-2').hide();
         $('#zip-info-3').hide();
     }
-
 }
-
-//****************** HTML writters ******************************** */
+function showMenuBox(switchOn){
+    if(switchOn){
+        $('#menu-section').show();
+    }else{
+        $('#menu-section').hide();
+    }
+}

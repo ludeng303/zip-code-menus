@@ -20,7 +20,8 @@
 							<input id="js-input-zip" name="zip" type="text" pattern="[0-9]*" placeholder="US Zip Code" required/>
 							<input id="js-input-submit" type="submit" value="Find"/>
 						</form>
-						<h3 id='js-h3-messege'>Example: 10036</h3>
+						<h3 id='js-h3-zipMessege'>Example:</h3>
+						<h3 id='js-h3-fileMessege'>[94133]  [70116]  [10036]</h3>
 					</div>
 					<div class='cards' id ='zip-info-1'>
 						<p>Zip Code: <span id='js-ZipCode'>80122</span></p>
@@ -57,13 +58,11 @@
 					</div>
 				</div>
 			</nav>
-			<section>
+			<section id='menu-section'>
 				<div class='page-selector' id='js-page-selector'>
 					<h2>Pages: </h2>
 				</div>
-			</section>
-			<section>
-				<div class="result-container">
+				<div class="result-container" id='card-holder'>
 					<div class ='menu-cards'>
 						<h3>Restaurant Name</h3>
 						<p>* * * * *</p>

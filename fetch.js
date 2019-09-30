@@ -19,27 +19,22 @@ function searchMenu(zipCode, page){
   }
   
   $.ajax(settings).done(function (response) {
-    let cuisinesStr = '';
-    if(response.result.data[1].cuisines.length <= 0){
-      cuisinesStr = '*******';
-    }else{
-      cuisinesStr = response.result.data[1].cuisines.join();
-    }
-  
     console.log(response);
-    console.log(cuisinesStr);
     displayPageNav(response);
+    displayMenuCards(response);
   });
-  }
+}
 
 function displayPageNav(response){
   let numOfPages = response.result.pages;
   let numOfMenus = response.result.totalResults;
   let zipCode = response.result.data[0].address.postal_code;
+  let msg = numOfMenus + ' menus on file';
+  $('#js-h3-fileMessege').text(msg);
   let htmlStr = `<h2>${numOfMenus} menus on file for zip code [${zipCode}] </h2>`;
   let pageStr = `<p>(50 menus per page)`
   for(let i=0; i<numOfPages; i++){
-    let str = `<button class="page-button" onclick="getPage(${i+1})">${i+1}</button>`;
+    let str = `<button class="page-button" onclick="pageItemOnclick(${zipCode},${i+1})">${i+1}</button>`;
     htmlStr += str;
   }
   if(numOfPages>1){
@@ -49,14 +44,40 @@ function displayPageNav(response){
   document.getElementById('js-page-selector').innerHTML = htmlStr;
 }
 
-function getPage(i){
-  console.log(i);
-  showRestaurantCards(i);
-  
-}
 
-function showRestaurantCards(i){
 
+function displayMenuCards(response){
+  showMenuBox(true);
+  let numOfMenus = response.result.numResults;
+  let htmlStr = ``;
+  for(let i=0; i<numOfMenus; i++){
+    let name = response.result.data[i].restaurant_name;
+    let hours = response.result.data[i].hours;
+    let cuisinesStr = "";
+    if(response.result.data[i].cuisines.length <= 0){
+      cuisinesStr = '********';
+    }else{
+      cuisinesStr = response.result.data[i].cuisines.join();
+    }
+    let address = response.result.data[i].address.street;
+    let phone = response.result.data[i].restaurant_phone;
+    let id = response.result.data[i].restaurant_id;
+    let cardHtml = `
+        <div class ='menu-cards'>
+          <h3>${name}</h3>
+          <p>${cuisinesStr}*</p>
+          <p>${hours}</p>
+          <p>${address}</p>	
+          <p>${phone}</p>										
+          <p>${id}</p>
+         </div>
+      `;
+      console.log("card finished: "+ cardHtml);
+      htmlStr += cardHtml;
+
+  }// end of for loop
+  console.log("all cards finished " + htmlStr);
+  document.getElementById('card-holder').innerHTML = htmlStr;
 }
 
 // API key + URL from https://www.zip-codes.com/
@@ -75,17 +96,16 @@ function searchZipCode(zipCode) {
         }
         throw new Error(response.statusText);
       })
-      .then(responseJson => displayZipResults(responseJson, url))
+      .then(responseJson => displayZipResults(responseJson))
       .catch(err => {
-        $('#js-h3-messege').text(`No result found. Please try another zip code.`);
+        $('#js-h3-zipMessege').text(`No result found. Please try another zip code.`);
       });
   }
 
-  function displayZipResults(responseJson, url) {
+  function displayZipResults(responseJson) {
     console.log(responseJson.item);
     let str = 'Zip code found in the city of ' +responseJson.item.City;
-    $('#js-h3-messege').text(str);
-    //$('#js-h3-messege').text(`Zip code found!`);
+    $('#js-h3-zipMessege').text(str);
     $('#js-ZipCode').text(''+responseJson.item.ZipCode);
     $('#js-AreaLand').text(''+responseJson.item.AreaLand);
     $('#js-ZipCodePopulation').text(''+responseJson.item.ZipCodePopulation);
