@@ -92,8 +92,8 @@ function searchMenu_ID(id){
   }
   
   $.ajax(settings).done(function (response) {
-    console.log(response.result.menus[2].menu_section[2].section_name);
-
+    //console.log(response.result.menus[2].menu_section[2].section_name);
+    console.log(response);
 
   });
 }

@@ -14,7 +14,6 @@ $(function() {
     showResultCards(false);
     showMenuBox(false);
     watchForms();
-
 });
 function pageItemOnclick(zipCode, i){
     searchMenu(zipCode, i);
