@@ -19,7 +19,7 @@ function searchMenu(zipCode, page){
   }
   
   $.ajax(settings).done(function (response) {
-    console.log(response);
+    //console.log(response);
     displayPageNav(response);
     displayMenuCards(response);
   });
@@ -76,7 +76,6 @@ function displayMenuCards(response){
 }
 
 // End-point GET restaurant by id, API from https://rapidapi.com
-
 function searchMenu_ID(id){
   let url1_pt_1 = 'https://us-restaurant-menus.p.rapidapi.com/restaurant/';
   const url = url1_pt_1 + id;
@@ -92,9 +91,8 @@ function searchMenu_ID(id){
   }
   
   $.ajax(settings).done(function (response) {
-    //console.log(response.result.menus[2].menu_section[2].section_name);
     console.log(response);
-
+    //console.log(response.result.menus[0].menu_section[0].section_name);
   });
 }
 
@@ -103,6 +101,7 @@ function searchMenu_ID(id){
 const zipApiKey = 'RFHNTCY2KK2J45YBFI6U'; 
 const zipSearchURL = 'https://api.zip-codes.com/ZipCodesAPI.svc/1.0/GetZipCodeDetails/';
 
+/*
 function searchZipCode(zipCode) {
 
     let str = zipSearchURL + zipCode + '?';
@@ -120,6 +119,7 @@ function searchZipCode(zipCode) {
         $('#js-h3-zipMessege').text(`No result found. Please try another zip code.`);
       });
   }
+  */
 
   function displayZipResults(responseJson) {
     console.log(responseJson.item);

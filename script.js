@@ -6,7 +6,8 @@ function watchForms() {
     $('#js-form-zip').submit(event => {
         event.preventDefault();
         const userInput = $('#js-input-zip').val();
-        searchZipCode(userInput);
+        // function below disabled due to Api call limits
+        //searchZipCode(userInput);
         searchMenu(userInput,1);
     });
 }
