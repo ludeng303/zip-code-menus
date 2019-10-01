@@ -92,7 +92,7 @@ function searchMenu_ID(id){
   
   $.ajax(settings).done(function (response) {
     console.log(response);
-    //console.log(response.result.menus[0].menu_section[0].section_name);
+    console.log(response.result.menus[0].menu_sections[3].menu_items[2].description);
   });
 }
 
@@ -101,7 +101,7 @@ function searchMenu_ID(id){
 const zipApiKey = 'RFHNTCY2KK2J45YBFI6U'; 
 const zipSearchURL = 'https://api.zip-codes.com/ZipCodesAPI.svc/1.0/GetZipCodeDetails/';
 
-/*
+
 function searchZipCode(zipCode) {
 
     let str = zipSearchURL + zipCode + '?';
@@ -119,7 +119,7 @@ function searchZipCode(zipCode) {
         $('#js-h3-zipMessege').text(`No result found. Please try another zip code.`);
       });
   }
-  */
+  
 
   function displayZipResults(responseJson) {
     console.log(responseJson.item);

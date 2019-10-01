@@ -7,7 +7,7 @@ function watchForms() {
         event.preventDefault();
         const userInput = $('#js-input-zip').val();
         // function below disabled due to Api call limits
-        //searchZipCode(userInput);
+        searchZipCode(userInput);
         searchMenu(userInput,1);
     });
 }
@@ -19,9 +19,11 @@ $(function() {
 function pageItemOnclick(zipCode, i){
     searchMenu(zipCode, i);
 }
+        // function below disabled due to Api call limits
+/*
 function menuCardOnclick(id){
     searchMenu_ID(id);
-}
+}*/
 
 //****************** screen switches ********************************** */
 function showResultCards(switchOn){

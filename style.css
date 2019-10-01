@@ -1,10 +1,13 @@
 * {
   box-sizing: border-box;
 }
-
+body{
+  background-color: #5481CC;
+}
 header > h1{
   text-align: center;
   font-size: 4em;
+  color: lightgray;
 }
 body {
   display: flexbox;
@@ -17,11 +20,12 @@ input {
 nav {
   padding-bottom: 1em;
   margin: 6px;
-  background-color: gainsboro;
+  background-color: #D2FA69;
 }
 .cards > h3{
   text-align: center;
   font-size: 20px;
+  color: black;
 }
 form {
   display: grid;
@@ -34,6 +38,7 @@ section {
   border: 1px solid black;
   padding: 1em;
   margin: 1em;
+  background-color: darkgray;
 }
 .page-selector{
   padding-left: 18px;
@@ -49,6 +54,9 @@ section {
 }
 .page-selector{
   justify-content: center;
+}
+.examples{
+  color: gray;
 }
 
 /*
