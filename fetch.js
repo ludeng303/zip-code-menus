@@ -2,7 +2,6 @@
 'use strict';
 
 // API from https://rapidapi.com
-
 function searchMenu(zipCode, page){
   let url1 = 'https://us-restaurant-menus.p.rapidapi.com/restaurants/zip_code/';
   let url2 = '?page=';
@@ -19,7 +18,6 @@ function searchMenu(zipCode, page){
   }
   
   $.ajax(settings).done(function (response) {
-    //console.log(response);
     displayPageNav(response);
     displayMenuCards(response);
   });
@@ -42,7 +40,6 @@ function displayPageNav(response){
 
   document.getElementById('js-page-selector').innerHTML = htmlStr;
 }
-
 function displayMenuCards(response){
   showMenuBox(true);
   let numOfMenus = response.result.numResults;
@@ -60,7 +57,7 @@ function displayMenuCards(response){
     let phone = response.result.data[i].restaurant_phone;
     let id = response.result.data[i].restaurant_id;
     let cardHtml = `
-        <div class ='menu-cards' onclick="menuCardOnclick(${id})">
+        <div class ='menu-cards'">
           <h3>${name}</h3>
           <p>${cuisinesStr}*</p>
           <p>${hours}</p>
@@ -75,38 +72,13 @@ function displayMenuCards(response){
   document.getElementById('card-holder').innerHTML = htmlStr;
 }
 
-// End-point GET restaurant by id, API from https://rapidapi.com
-function searchMenu_ID(id){
-  let url1_pt_1 = 'https://us-restaurant-menus.p.rapidapi.com/restaurant/';
-  const url = url1_pt_1 + id;
-  let settings = {
-    "async": true,
-    "crossDomain": true,
-    "url": url,
-    "method": "GET",
-    "headers": {
-      "x-rapidapi-host": "us-restaurant-menus.p.rapidapi.com",
-      "x-rapidapi-key": "2f50b9da63msh084ee8e8713c928p158020jsn62e5f9475ade"
-    }
-  }
-  
-  $.ajax(settings).done(function (response) {
-    console.log(response);
-    console.log(response.result.menus[0].menu_sections[3].menu_items[2].description);
-  });
-}
-
-
 // API key + URL from https://www.zip-codes.com/
 const zipApiKey = 'RFHNTCY2KK2J45YBFI6U'; 
 const zipSearchURL = 'https://api.zip-codes.com/ZipCodesAPI.svc/1.0/GetZipCodeDetails/';
 
-
 function searchZipCode(zipCode) {
-
     let str = zipSearchURL + zipCode + '?';
     const url = str + 'key=' + zipApiKey;
-
     fetch(url)
       .then(response => {
         if (response.ok) {
@@ -116,11 +88,10 @@ function searchZipCode(zipCode) {
       })
       .then(responseJson => displayZipResults(responseJson))
       .catch(err => {
-        $('#js-h3-zipMessege').text(`No result found. Please try another zip code.`);
+        $('#js-h3-zipMessege').text(`No result found.`);
       });
   }
   
-
   function displayZipResults(responseJson) {
     console.log(responseJson.item);
     let str = 'Zip code found in the city of ' +responseJson.item.City;

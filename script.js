@@ -1,5 +1,10 @@
 'use strict';
 
+$(function() {
+    showResultCards(false);
+    showMenuBox(false);
+    watchForms();
+});
 //****************** click listeners & screen switches  **************** */
 //****************** click listeners ******************************** */
 function watchForms() {
@@ -11,21 +16,13 @@ function watchForms() {
         searchMenu(userInput,1);
     });
 }
-$(function() {
-    showResultCards(false);
-    showMenuBox(false);
-    watchForms();
-});
+// Handle page index changeds
 function pageItemOnclick(zipCode, i){
     searchMenu(zipCode, i);
 }
-        // function below disabled due to Api call limits
-/*
-function menuCardOnclick(id){
-    searchMenu_ID(id);
-}*/
 
 //****************** screen switches ********************************** */
+// when there is no result, all result cards are hidden
 function showResultCards(switchOn){
     if(switchOn){
         $('#zip-info-1').show();
@@ -37,6 +34,7 @@ function showResultCards(switchOn){
         $('#zip-info-3').hide();
     }
 }
+// When data is fetched menubox is shown when data
 function showMenuBox(switchOn){
     if(switchOn){
         $('#menu-section').show();
