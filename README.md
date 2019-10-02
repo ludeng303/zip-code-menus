@@ -7,4 +7,4 @@ demo:
 https://sxiaolu86.github.io/zip-code-menus/
 
 
-![alt text](https://raw.githubusercontent.com/sxiaolu86/zip-code-menus/blob/master/screenshot01.png)
+![alt text](https://raw.githubusercontent.com/sxiaolu86/zip-code-menus/screenshot01.png)
